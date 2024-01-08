@@ -1,38 +1,102 @@
-.App {
+body{
+  background-color: #222222;
+  color: #ffffff;
+}
+
+h1{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-wrapper{
+  background-color: #555555;
+  padding: 2%;
+  width: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  margin: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-input{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 1px solid gray;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  width: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-input-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-input-item label{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input{
+  padding: 8px;
+  border: none;
+  width: 300px;
+  border-radius: 8px;
+}
+
+.primarybtn{
+  background-color: #444444;
+  color: #ffffff;
+  border-radius: 8px;
+  height: 36px;
+  width: 100px;
+  border: none;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.togglebtn{
+  background-color: #333333;
+  color: #ffffff;
+  border-radius: 8px;
+  height: 36px;
+  width: 100px;
+  border: none;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.active{
+  background-color: #222222;
+}
+
+.todo-list{
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.todo-list-item{
+  background-color: #111111;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.icon{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.check-icon{
+  font-size: 25px;
+  margin-left: 10px;
+  cursor: pointer;
 }
