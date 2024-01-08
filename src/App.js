@@ -1,24 +1,27 @@
 import React,{useEffect, useState} from 'react'
 import './App.css'
-import { MdDeleteOutline, MdCheck, MdEdit } from "react-icons/md" 
+import { MdDeleteOutline, MdCheck, MdEdit, MdVisibility } from "react-icons/md" 
 
 const App = () => {
-  const[isCompleteScreen, setIsCompleteScreen] = useState(false)
+  // State variables
+  const[isToggleScreen, setIsToggleScreen] = useState(false)
   const[allTodos, setAllTodos] = useState([])
   const[newTitle, setNewTitle] = useState("")
   const[newDescription, setNewDescription] = useState("")
   const[CompletedTodos, setCompletedTodos] = useState([])
   const[editMode, setEditMode] = useState(false) 
-  const[editedIndex, setEditedIndex] = useState(null) 
-  const isAddButtonDisabled = !newTitle.trim() || !newDescription.trim() 
-
-  //Adds Todo
+  const[editedIndex, setEditedIndex] = useState(null)
+  const[selectedTodo, setSelectedTodo] = useState(null)
+  const[isViewOpen, setIsViewOpen] = useState(false)
+  const isAddButtonDisabled = !newTitle.trim() || !newDescription.trim()
+  
+  // Adds or edits a Todo
   const addTodoHandle = () => {
-    let updatedTodoArray 
+    let updatedTodoArray
   
     if (editMode && editedIndex !== null) {
       // Editing existing Todo
-      updatedTodoArray = [...allTodos] 
+      updatedTodoArray = [...allTodos]
       updatedTodoArray[editedIndex] = {
         title: newTitle,
         description: newDescription,
@@ -52,19 +55,19 @@ const App = () => {
   // Deletes Todo
   const deleteTodoHandle = (index, showConfirmation = true) => {
     if (showConfirmation) {
-      const confirmDeletion = window.confirm('Are you sure you want to delete this todo?') 
+      const confirmDeletion = window.confirm('Are you sure you want to delete this todo?')
       if (!confirmDeletion) {
-        return 
+        return
       }
     }
 
     let deletedTodoArray = [...allTodos] 
-    deletedTodoArray.splice(index, 1) 
-    setAllTodos(deletedTodoArray) 
-    localStorage.setItem('todoList', JSON.stringify(deletedTodoArray)) 
+    deletedTodoArray.splice(index, 1)
+    setAllTodos(deletedTodoArray)
+    localStorage.setItem('todoList', JSON.stringify(deletedTodoArray))
   }
 
-  // Adds completed todo to completed tab
+  // Moves a Todo to completed list
   const completedTodoHandle = (index) => {
     const confirmCompletion = window.confirm('Mark this todo as completed?')
     if (confirmCompletion) {
@@ -75,8 +78,8 @@ const App = () => {
       let completedTodoArray = [...CompletedTodos] 
       completedTodoArray.push(filteredItem) 
       setCompletedTodos(completedTodoArray) 
-      // Delete item from the actual todo list without confirmation
-      deleteTodoHandle(index, false) 
+      // For deleting item from the actual todo list without confirmation
+      deleteTodoHandle(index, false)
       localStorage.setItem('completedTodoList', JSON.stringify(completedTodoArray))
     }
   }
@@ -91,8 +94,13 @@ const App = () => {
       localStorage.setItem('completedTodoList', JSON.stringify(deleteCompletedTodoArray))
     }
   }
+  // Opens the detailed view of a Todo
+  const openView = (item) => {
+    setSelectedTodo(item)
+    setIsViewOpen(true) //To open page (conditional rendering)
+  }
 
-  //using useEffect hook whenever the page is rendered 1st and checking whether local storage contains item or not
+  //useEffect hook, whenever the page is rendered 1st and checking whether local storage contains item or not
   //session storage
   useEffect(() =>{
     let localTodo = JSON.parse(localStorage.getItem('todoList'))
@@ -107,7 +115,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>My Todos</h1>
+      <h1>My To-do List</h1>
 
       <div className='todo-wrapper'>
         <div className='todo-input'>
@@ -128,12 +136,12 @@ const App = () => {
         </div>
 
         <div className='btn-area'>
-          <button className={`togglebtn ${isCompleteScreen === false && 'active'}`} onClick={() => setIsCompleteScreen(false)}>Todo</button>
-          <button className={`togglebtn ${isCompleteScreen === true && 'active'}`} onClick={() => setIsCompleteScreen(true)}>Completed</button>
+          <button className={`togglebtn1 ${isToggleScreen === false && 'active'}`} onClick={() => setIsToggleScreen(false)}>Todo</button>
+          <button className={`togglebtn2 ${isToggleScreen === true && 'active'}`} onClick={() => setIsToggleScreen(true)}>Completed</button>
         </div>
 
         <div className='todo-list'>
-          {isCompleteScreen === false && allTodos.map((item, index) =>{
+          {isToggleScreen === false && allTodos.map((item, index) =>{
             return(
               <div className='todo-list-item' key={index}>
                 <div>
@@ -141,6 +149,7 @@ const App = () => {
                   <p className='todo-input-item-text'>{item.description}</p>
                 </div>
                 <div>
+                  <MdVisibility className='icons' onClick={() => openView(item)} title='View' />
                   <MdDeleteOutline className='icons' onClick={() => deleteTodoHandle(index)} title='Delete' />
                   <MdCheck className='icons' onClick={() => completedTodoHandle(index)} title='Complete'/>
                   <MdEdit className='icons' onClick={() => editTodoHandle(index)} title='Edit' />
@@ -149,7 +158,18 @@ const App = () => {
             )
           })}
 
-          {isCompleteScreen === true && CompletedTodos.map((item, index) =>{
+          {/* View Page*/}
+          {isViewOpen && (
+            <div className="view-container">
+              <div className="view-content">
+                <h2>{selectedTodo.title}</h2>
+                <p>{selectedTodo.description}</p>
+                <button className='close-button' onClick={() => setIsViewOpen(false)}>Close</button>
+              </div>
+            </div>
+          )}
+
+          {isToggleScreen === true && CompletedTodos.map((item, index) =>{
             return(
               <div className='todo-list-item' key={index}>
                 <div>
@@ -157,6 +177,7 @@ const App = () => {
                   <p className='todo-input-item-text'>{item.description}</p>
                 </div>
                 <div>
+                  <MdVisibility className='icons' onClick={() => openView(item)} title='View' />
                   <MdDeleteOutline className='icons' onClick={() => deleteCompletedTodoHandle(index)} title='Delete?' />
                 </div>
               </div>
