@@ -122,21 +122,21 @@ const App = () => {
 
           <div className='todo-input-item'>
             <label>Title: </label>
-            <input type='text' value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder='Enter Todo Title' required/>
+            <input type='text' value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder='Enter To-do Title' required/>
           </div>
 
           <div className='todo-input-item'>
             <label>Description: </label>
-            <input type='text' value={newDescription} onChange={(e) => setNewDescription(e.target.value)} placeholder='Enter Todo Description' required/>
+            <input type='text' value={newDescription} onChange={(e) => setNewDescription(e.target.value)} placeholder='Enter To-do Description' required/>
           </div>
 
           <div className='todo-input-itm'>
-            <button type='button' onClick={addTodoHandle} className='addbtn' disabled={isAddButtonDisabled}>Add Todo</button>
+            <button type='button' onClick={addTodoHandle} className='addbtn' disabled={isAddButtonDisabled}>Add To-do</button>
           </div>
         </div>
 
         <div className='btn-area'>
-          <button className={`togglebtn1 ${isToggleScreen === false && 'active'}`} onClick={() => setIsToggleScreen(false)}>Todo</button>
+          <button className={`togglebtn1 ${isToggleScreen === false && 'active'}`} onClick={() => setIsToggleScreen(false)}>To-do</button>
           <button className={`togglebtn2 ${isToggleScreen === true && 'active'}`} onClick={() => setIsToggleScreen(true)}>Completed</button>
         </div>
 
