@@ -1,102 +1,122 @@
-body{
+body {
   background-color: #222222;
   color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-.todo-wrapper{
-  background-color: #555555;
-  padding: 2%;
+.todo-wrapper {
+  background-color: #444444;
+  padding: 12px;
   width: auto;
-  max-height: 80vh;
+  max-height: 90vh;
   overflow-y: auto;
   border-radius: 12px;
   margin: 24px;
 }
 
-.todo-input{
+.todo-input {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: left;
   border-bottom: 1px solid gray;
   padding-bottom: 25px;
   margin-bottom: 25px;
   width: auto;
 }
 
-.todo-input-item{
+.todo-input-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-right: 25px;
+  align-items: left;
+  margin-bottom: 15px;
 }
 
-.todo-input-item label{
+.todo-input-item label {
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
-.todo-input-item input{
+.todo-input-item input {
   padding: 8px;
   border: none;
-  width: 300px;
+  width: auto;
+  height: 24px;
   border-radius: 8px;
+  font-size: 18px;
 }
 
-.primarybtn{
+.todo-input-item ::placeholder {
+  padding: 4px;
+  font-size: 14px;
+}
+
+.addbtn{
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  height: 36px;
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-area{
+  display: flex;
+  flex-direction: row;
+}
+
+.togglebtn {
   background-color: #444444;
   color: #ffffff;
   border-radius: 8px;
   height: 36px;
-  width: 100px;
+  width: 100%;
   border: none;
-  margin-top: 30px;
+  margin-top: 10px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.togglebtn{
-  background-color: #333333;
-  color: #ffffff;
-  border-radius: 8px;
-  height: 36px;
-  width: 100px;
-  border: none;
-  margin-top: 30px;
-  cursor: pointer;
-}
-
-.active{
+.active {
   background-color: #222222;
 }
 
-.todo-list{
+.todo-list {
   display: flex;
   flex-direction: column;
   margin-top: 12px;
 }
 
-.todo-list-item{
+.todo-list-item {
   background-color: #111111;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   padding: 12px;
-  padding-bottom: 10px;
-  padding-top: 10px;
   margin-bottom: 10px;
   align-items: center;
+  border-radius: 18px;
 }
 
-.icon{
-  font-size: 25px;
-  cursor: pointer;
+.todo-input-item-text{
+  overflow: hidden;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.check-icon{
+.icons{
   font-size: 25px;
   margin-left: 10px;
   cursor: pointer;
 }
+
