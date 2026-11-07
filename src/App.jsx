@@ -1790,10 +1790,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="app-footer">
-        <p>TaskMaster • Fully Customizable & Modernized</p>
-      </footer>
+
     </div>
   );
 }
