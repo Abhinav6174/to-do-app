@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# TaskMaster — Modern To-Do & Task Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sleek, fast, and feature-rich task management application built with **React 19**, **Vite 8**, and a deeply customizable design system.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features & Customizations
 
-### `npm start`
+### 🎨 Deep Visual & Theme Customization
+- **3 Color Themes**:
+  - `Light Mode`: Crisp, soft grays and clean backgrounds.
+  - `Dark Mode`: Deep midnight navy with elevated card contrast.
+  - `OLED Pitch Black`: Pure `#000000` dark mode optimized for OLED screens and battery saving.
+- **7 Vibrant Accent Colors**:
+  - Ocean Blue (`#3b82f6`)
+  - Royal Indigo (`#6366f1`)
+  - Deep Violet (`#8b5cf6`)
+  - Sunset Rose (`#f43f5e`)
+  - Warm Amber (`#f59e0b`)
+  - Fresh Emerald (`#10b981`)
+  - Vibrant Cyan (`#06b6d4`)
+- **4 Typography Options**:
+  - `Plus Jakarta Sans`: Modern, geometric, clean.
+  - `JetBrains Mono`: Precise code/monospace font.
+  - `Editorial Serif`: Warm, classic, elegant serif.
+  - `System Humanist`: Native high-legibility system UI.
+- **2 Display Density Modes**:
+  - `Comfortable`: Spacious cards with full previews.
+  - `Compact`: Tight single-line rows for power users managing high volume.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📌 Smart Task Capabilities
+- **Subtasks & Interactive Checklists**: Break down complex tasks into subtasks with individual checkboxes and a visual mini progress bar (`X of Y steps completed`).
+- **Pin to Top**: Pin critical tasks with a single click to keep them anchored at the top.
+- **Estimated Duration**: Set time estimates (e.g. `15m`, `45m`, `2h`) with dedicated visual timer badges.
+- **Quick Templates**: 1-click preset task generation for:
+  - 🌅 *Morning Productivity Routine*
+  - 💼 *Daily Team Sync & Updates*
+  - 🛒 *Weekly Grocery Shopping*
+  - 🧠 *Focused Deep Work Sprint*
+- **Custom Categories**: Create, customize, and delete custom tags on the fly.
+- **Audio Feedback**: Harmonious Web Audio synthesizer chime upon completing tasks (with toggle switch).
+- **Celebration Confetti**: Particle burst animations upon completing tasks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📊 Productivity Insights & Controls
+- **Overview Dashboard**: Real-time counter of total, pending, and completed tasks with animated progress bar.
+- **Live Search, Filter & Sort**:
+  - Instant search across title, notes, and tags.
+  - Multi-attribute filter by status (`All`, `In Progress`, `Completed`), category, and priority.
+  - Sort by newest, oldest, priority, due date, or alphabetically.
+- **In-App Modals**: Detailed task inspection view and custom confirmation dialogs.
+- **Data Portability**: Full JSON backup export and restore.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js `^18.0.0` or higher (tested on Node v22)
+- npm `^9.0.0` or higher
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Clone the repository
+git clone https://github.com/abhinav6174/to-do-app.git
 
-### `npm run eject`
+# Navigate to project directory
+cd to-do-app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Install dependencies
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Available Scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **`npm run dev`** or **`npm start`**: Launches local development server at `http://localhost:3000` with instant HMR.
+- **`npm test`**: Runs the Vitest automated test suite.
+- **`npm run build`**: Generates minified production bundle in `dist/` (<300ms).
+- **`npm run preview`**: Locally serves the production build.
+- **`npm run deploy`**: Deploys the production build to GitHub Pages.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 8](https://vite.dev/)
+- **Test Runner**: [Vitest](https://vitest.dev/) + React Testing Library
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti)
+- **Audio Engine**: Web Audio API Synthesizer (Zero asset dependencies)
+- **Styles**: CSS Custom Properties & Responsive Flex/Grid
