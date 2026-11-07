@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded Brand Squircle -->
+  <rect width="64" height="64" rx="16" fill="url(#brandGrad)" />
+  
+  <!-- ListTodo Checklist Graphic -->
+  <g fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top Item Check & Line -->
+    <polyline points="16,21 21,26 30,17" stroke-width="4" />
+    <line x1="38" y1="21" x2="48" y2="21" />
+    
+    <!-- Middle Item Check & Line -->
+    <polyline points="16,33 21,38 30,29" stroke-width="4" />
+    <line x1="38" y1="33" x2="48" y2="33" />
+    
+    <!-- Bottom Item Box & Line -->
+    <rect x="16.5" y="42" width="10" height="10" rx="2.5" stroke-width="3.5" />
+    <line x1="38" y1="47" x2="48" y2="47" />
+  </g>
+</svg>

@@ -828,7 +828,6 @@ export default function App() {
           <div>
             <div className="brand-title-wrap">
               <h1 className="brand-title">TaskMaster</h1>
-              <span className="brand-version-badge">PRO</span>
             </div>
             <p className="brand-subtitle">Smart task manager with rich customizations & insights</p>
           </div>

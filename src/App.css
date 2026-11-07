@@ -73,16 +73,6 @@
   line-height: 1.15;
 }
 
-.brand-version-badge {
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  background: var(--primary-light);
-  color: var(--primary);
-  border: 1px solid var(--primary-glow);
-  padding: 0.15rem 0.45rem;
-  border-radius: var(--radius-sm);
-}
 
 .brand-subtitle {
   font-size: 0.88rem;
